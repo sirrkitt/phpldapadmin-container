@@ -1,0 +1,13 @@
+{
+        "applications": {
+                "phpLDAPadmin": {
+                        "type": "php",
+                        "root": "/www/htdocs"
+                }
+        },
+        "listeners": {
+                "*:8080": {
+                        "pass": "applications/phpLDAPadmin"
+                }
+        }
+}
