@@ -1,3 +1,4 @@
+FROM nginx/unit:1.16.0-php7.3
 COPY config.json config.json
 COPY entrypoint.sh entrypoint.sh
 ADD https://github.com/leenooks/phpLDAPadmin/archive/1.2.5.tar.gz /
