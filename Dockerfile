@@ -10,6 +10,6 @@ RUN mkdir /config
 RUN chmod +x /entrypoint.sh
 VOLUME /config
 
-ENTRYPOINT entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 8080
