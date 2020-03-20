@@ -1,7 +1,7 @@
 FROM nginx/unit:1.16.0-php7.3
 
-RUN apt update \
-	&& apt install php7.3-ldap php7.3-xml php7.3-xmlrpc \
+RUN apt update &&\
+	apt install php7.3-ldap php7.3-xml php7.3-xmlrpc &&\
 	rm -rf /var/lib/apt/lists/*
 
 COPY config.json config.json
