@@ -1,4 +1,35 @@
 {
+	"routes": [
+		{
+			"match": {
+				"uri": "/css/*"
+			},
+			"action": {
+				"share": "/www/htdocs/css"
+			}
+		},
+		{
+			"match": {
+				"uri": "/images/*"
+			},
+			"action": {
+				"share": "/www/htdocs/images"
+			}
+		},
+		{
+			"match": {
+				"uri": "/js/*"
+			},
+			"action": {
+				"share": "/www/htdocs/js"
+			}
+		},
+		{
+			"action": {
+				"pass": "applications/phpLDAPadmin"
+			}
+		}
+	],
         "applications": {
                 "phpLDAPadmin": {
                         "type": "php",
@@ -7,7 +38,7 @@
         },
         "listeners": {
                 "*:8080": {
-                        "pass": "applications/phpLDAPadmin"
+                        "pass": "routes"
                 }
         }
 }
