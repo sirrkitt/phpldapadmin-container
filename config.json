@@ -1,35 +1,22 @@
 {
-	"routes": [
-		{
-			"match": {
-				"uri": "/css/*"
-			},
-			"action": {
-				"share": "/www/htdocs/css"
-			}
-		},
-		{
-			"match": {
-				"uri": "/images/*"
-			},
-			"action": {
-				"share": "/www/htdocs/images"
-			}
-		},
-		{
-			"match": {
-				"uri": "/js/*"
-			},
-			"action": {
-				"share": "/www/htdocs/js"
-			}
-		},
-		{
-			"action": {
-				"pass": "applications/phpLDAPadmin"
-			}
-		}
-	],
+        "routes": [
+                {
+                        "match": {
+                                "uri": "*.php"
+                        },
+                        "action": {
+                                "pass": "applications/phpLDAPadmin"
+                        }
+                },
+                {
+                        "action": {
+                                "share": "/www/htdocs",
+                                "fallback": {
+                                        "pass": "applications/phpLDAPadmin"
+                                }
+                        }
+                }
+        ],
         "applications": {
                 "phpLDAPadmin": {
                         "type": "php",
